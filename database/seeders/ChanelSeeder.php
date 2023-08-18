@@ -17,7 +17,7 @@ class ChanelSeeder extends Seeder
             DB::table('chanels')->insert([
                 'name' => $faker->name(),
                 'des' => $faker->paragraph(),
-                'sub' => $faker->paragraph(),
+                'sub' => $faker->numberBetween(1000, 100000),
                 'url' => $faker->paragraph(),
                 
                 'created_at' => now(),
