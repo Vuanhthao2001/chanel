@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Chanel Show</h2>
+                <h2>FakeTube</h2>
             </div>
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('chanels.create') }}"> Create Chanel</a>
@@ -25,12 +25,14 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>S.No</th>
-            <th>Name</th>
+            <th>ChanelID</th>
+            <th>ChanelName</th>
             <th>Description</th>
-            <th>Sub</th>
-            <th>url</th>
-            <th width="280px">Action</th>
+            <th>SubScribersCount</th>
+            <th>URL</th>
+            <th>Create_At</th>
+            <th>Update_At</th>
+            <th width="100px">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -41,11 +43,13 @@
             <td>{{ $chanel->des }}</td>
             <td>{{ $chanel->sub }}</td>
             <td>{{ $chanel->url }}</td>
+            <td>{{ $chanel->created_at }}</td>
+            <td>{{ $chanel->updated_at }}</td>
             <td>
 
                     <a class="btn btn-primary" href="{{ route('chanels.show',$chanel->id) }}">Detail</a>
-                    <a class="btn btn-primary" href="{{ route('chanels.edit',$chanel->id) }}">Edit</a>
-                    <a class="btn btn-primary" href="#" data-id={{ $chanel->id }} data-toggle="modal" data-target="#{{$chanel->id}}">Delete</a>
+                    <a class="btn btn-warning" href="{{ route('chanels.edit',$chanel->id) }}">Edit</a>
+                    <a class="btn btn-danger" href="#" data-id={{ $chanel->id }} data-toggle="modal" data-target="#{{$chanel->id}}">Delete</a>
                     <!-- Modal -->
                     <form action="{{ route('chanels.destroy',$chanel->id) }}" method="post">
                         @csrf
