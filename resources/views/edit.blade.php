@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Name:</strong>
+                    <strong>ChanelName:</strong>
                     <input type="text" name="name" value="{{ $chanel->name }}" class="form-control"
                            placeholder="name">
                     @error('name')
@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <strong>Description:</strong>
                     <input type="text" name="des" class="form-control" placeholder="Description"
-                           value="{{ $chanels->des }}">
+                           value="{{ $chanel->des }}">
                     @error('des')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -51,8 +51,8 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Sub:</strong>
-                    <input type="text" name="sub" value="{{ $chanels->sub }}" class="form-control"
+                    <strong>SubScribersCount:</strong>
+                    <input type="text" name="sub" value="{{ $chanel->sub }}" class="form-control"
                            placeholder="Sub">
                     @error('sub')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -62,7 +62,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Url:</strong>
-                    <input type="text" name="url" value="{{ $chanels->url }}" class="form-control"
+                    <input type="text" name="url" value="{{ $chanel->url }}" class="form-control"
                            placeholder="Sub">
                     @error('url')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
