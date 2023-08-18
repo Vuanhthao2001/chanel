@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Edit Company Form - Laravel 9 CRUD Tutorial</title>
+    <title>Add Chanel Form </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -11,12 +11,11 @@
 <div class="container mt-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Chanel</h2>
+            <div class="pull-left mb-2">
+                <h2>Add Chanel</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('chanels.index') }}" enctype="multipart/form-data">
-                    Back</a>
+                <a class="btn btn-primary" href="{{ route('chanels.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -25,15 +24,13 @@
             {{ session('status') }}
         </div>
     @endif
-    <form action="{{ route('chanels.update',$chanel->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('chanels.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $chanel->name }}" class="form-control"
-                           placeholder="name">
+                    <strong>ChanelName:</strong>
+                    <input type="text" name="name" class="form-control" placeholder="Name">
                     @error('name')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -42,8 +39,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <input type="text" name="des" class="form-control" placeholder="Description"
-                           value="{{ $chanels->des }}">
+                    <input type="text" name="des" class="form-control" placeholder="Description">
                     @error('des')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -51,9 +47,8 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Sub:</strong>
-                    <input type="text" name="sub" value="{{ $chanels->sub }}" class="form-control"
-                           placeholder="Sub">
+                    <strong>SubScribersCount:</strong>
+                    <input type="text" name="sub" class="form-control" placeholder="Company Address">
                     @error('sub')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -61,9 +56,8 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Url:</strong>
-                    <input type="text" name="url" value="{{ $chanels->url }}" class="form-control"
-                           placeholder="Sub">
+                    <strong>URL:</strong>
+                    <input type="text" name="url" class="form-control" placeholder="Company Address">
                     @error('url')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
